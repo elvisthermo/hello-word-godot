@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://bptfagv1q6ba" path="res://assets/images/Background/Blue.png" id="1_w3gk0"]
 [ext_resource type="PackedScene" uid="uid://c7v8jfhci2nkm" path="res://scenes/player.tscn" id="2_ypoqj"]
 [ext_resource type="PackedScene" uid="uid://ccg6rrh3rk1qa" path="res://scenes/snail.tscn" id="4_1vg6f"]
-[ext_resource type="PackedScene" uid="uid://bge3gprcqqlji" path="res://scenes/apple.tscn" id="5_ssdv0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ypoqj"]
 texture = ExtResource("1_olmbx")
@@ -196,32 +195,3 @@ position = Vector2(424, 538)
 [node name="Snail" parent="Enemies" unique_id=400543611 instance=ExtResource("4_1vg6f")]
 texture_filter = 1
 position = Vector2(1175, 495.00003)
-
-[node name="Collect" type="Node2D" parent="." unique_id=2105105019]
-
-[node name="Apple" parent="Collect" unique_id=1097673050 instance=ExtResource("5_ssdv0")]
-position = Vector2(211, 299)
-
-[node name="Apple2" parent="Collect" unique_id=1188644614 instance=ExtResource("5_ssdv0")]
-position = Vector2(358, 254)
-
-[node name="Apple3" parent="Collect" unique_id=212510481 instance=ExtResource("5_ssdv0")]
-position = Vector2(408, 252)
-
-[node name="Apple6" parent="Collect" unique_id=1654348412 instance=ExtResource("5_ssdv0")]
-position = Vector2(608, 244)
-
-[node name="Apple8" parent="Collect" unique_id=823093779 instance=ExtResource("5_ssdv0")]
-position = Vector2(925, 302)
-
-[node name="Apple4" parent="Collect" unique_id=1379606236 instance=ExtResource("5_ssdv0")]
-position = Vector2(508, 248)
-
-[node name="Apple7" parent="Collect" unique_id=1124478731 instance=ExtResource("5_ssdv0")]
-position = Vector2(897, 107)
-
-[node name="Apple5" parent="Collect" unique_id=784613543 instance=ExtResource("5_ssdv0")]
-position = Vector2(558, 246)
-
-[node name="Apple9" parent="Collect" unique_id=500617047 instance=ExtResource("5_ssdv0")]
-position = Vector2(458, 250)

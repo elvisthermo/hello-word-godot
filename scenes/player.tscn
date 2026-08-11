@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://c7v8jfhci2nkm"]
 
-[ext_resource type="Texture2D" uid="uid://dude8on546bb2" path="res://assets/images/player/Hit (32x32).png" id="1_dqkch"]
+[ext_resource type="Texture2D" uid="uid://dude8on546bb2" path="res://assets/images/Player/Hit (32x32).png" id="1_dqkch"]
 [ext_resource type="Script" uid="uid://ce0ybfu664t8c" path="res://scripts/player.gd" id="1_qlg0r"]
-[ext_resource type="Texture2D" uid="uid://bd5dt61n5pr1" path="res://assets/images/player/Idle (32x32).png" id="2_qlg0r"]
-[ext_resource type="Texture2D" uid="uid://bgetkux5niolh" path="res://assets/images/player/Jump (32x32).png" id="3_tuyoq"]
-[ext_resource type="Texture2D" uid="uid://d37b5712qnx6n" path="res://assets/images/player/Run (32x32).png" id="4_fjrip"]
+[ext_resource type="Texture2D" uid="uid://bd5dt61n5pr1" path="res://assets/images/Player/Idle (32x32).png" id="2_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://bgetkux5niolh" path="res://assets/images/Player/Jump (32x32).png" id="3_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://d37b5712qnx6n" path="res://assets/images/Player/Run (32x32).png" id="4_fjrip"]
 [ext_resource type="AudioStream" uid="uid://bcc8g5s4i6nv6" path="res://assets/sounds/jump.wav" id="6_tuyoq"]
+[ext_resource type="AudioStream" uid="uid://dc2a0obmpwh1u" path="res://assets/sounds/death.wav" id="7_fjrip"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
 atlas = ExtResource("1_dqkch")
@@ -253,12 +254,15 @@ script = ExtResource("1_qlg0r")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1132053838]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_4cxnk")
-animation = &"running"
+animation = &"drying"
 autoplay = "idle"
 
 [node name="jumpSound" type="AudioStreamPlayer2D" parent="." unique_id=243740046]
 stream = ExtResource("6_tuyoq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2020622539]
-position = Vector2(0.66667175, 3.3333359)
+position = Vector2(0.33333334, 0)
 shape = SubResource("RectangleShape2D_fjrip")
+
+[node name="diedSound" type="AudioStreamPlayer2D" parent="." unique_id=1187588270]
+stream = ExtResource("7_fjrip")

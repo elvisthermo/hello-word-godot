@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://bciito838pbx6"]
+
+[ext_resource type="Texture2D" uid="uid://dq2j3fno4dkmf" path="res://assets/images/Snail/Walk (38x24).png" id="1_krot7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4wd2"]
+atlas = ExtResource("1_krot7")
+region = Rect2(0, 0, 42, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w18ys"]
+atlas = ExtResource("1_krot7")
+region = Rect2(42, 0, 42, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_reixx"]
+atlas = ExtResource("1_krot7")
+region = Rect2(84, 0, 42, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhids"]
+atlas = ExtResource("1_krot7")
+region = Rect2(126, 0, 42, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxilm"]
+atlas = ExtResource("1_krot7")
+region = Rect2(168, 0, 42, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mahjx"]
+atlas = ExtResource("1_krot7")
+region = Rect2(210, 0, 42, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fycn"]
+atlas = ExtResource("1_krot7")
+region = Rect2(252, 0, 42, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vc333"]
+atlas = ExtResource("1_krot7")
+region = Rect2(294, 0, 42, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhep5"]
+atlas = ExtResource("1_krot7")
+region = Rect2(336, 0, 42, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4cxnk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4wd2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w18ys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_reixx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhids")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxilm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mahjx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4fycn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vc333")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhep5")
+}],
+"loop": 0,
+"name": &"walking",
+"speed": 20.0
+}]
+
+[node name="Snail" type="Area2D" unique_id=1116137672]
+scale = Vector2(3, 3)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=421279081]
+sprite_frames = SubResource("SpriteFrames_4cxnk")
+animation = &"walking"
+frame = 8
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=705465070]
