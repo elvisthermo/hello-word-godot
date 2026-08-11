@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://dhd5pft523kmg"]
+
+[ext_resource type="Texture2D" uid="uid://bi1qihf0dcklq" path="res://assets/images/Tilemap/Terrain (16x16).png" id="1_0ljpy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4cxnk"]
+size = Vector2(48, 18)
+
+[sub_resource type="Animation" id="Animation_x6306"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ji5mt"]
+resource_name = "move"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5333333, 4.9666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(90, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iojtb"]
+_data = {
+&"RESET": SubResource("Animation_x6306"),
+&"move": SubResource("Animation_ji5mt")
+}
+
+[node name="MovePlataform" type="Node2D" unique_id=1200022631]
+scale = Vector2(3, 3)
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=596611546]
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D" unique_id=171944797]
+texture_filter = 1
+position = Vector2(10, 19)
+texture = ExtResource("1_0ljpy")
+region_enabled = true
+region_rect = Rect2(96, 128, 48, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=1543561400]
+position = Vector2(10, 20)
+shape = SubResource("RectangleShape2D_4cxnk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody2D" unique_id=165063506]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_iojtb")
+autoplay = &"move"

@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://twdyvctrykka" path="res://scripts/main.gd" id="1_0wfyh"]
 [ext_resource type="FontFile" uid="uid://wio0oa6cvl5k" path="res://assets/fonts/Square-Black.ttf" id="3_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://c8lhexfuuqvp" path="res://scenes/level_root.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://c8lhexfuuqvp" path="res://scenes/level1.tscn" id="3_sugp2"]
+[ext_resource type="AudioStream" uid="uid://dp2xnf6kk4iqs" path="res://assets/sounds/music.ogg" id="4_jyhfs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jm033"]
 bg_color = Color(0.53626204, 0.5647865, 0.8978952, 1)
@@ -21,9 +22,9 @@ script = ExtResource("1_0wfyh")
 
 [node name="LevelRoot" parent="." unique_id=377627112 instance=ExtResource("3_sugp2")]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1476523090]
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1476523090]
 
-[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=4401774]
+[node name="ScorePanel" type="Panel" parent="HUD" unique_id=4401774]
 modulate = Color(0.19526249, 0.7018377, 0.93366164, 1)
 anchors_preset = 5
 anchor_left = 0.5
@@ -35,7 +36,7 @@ offset_bottom = 44.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jm033")
 
-[node name="scoreLabel" type="Label" parent="CanvasLayer/Panel" unique_id=1719913088]
+[node name="scoreLabel" type="Label" parent="HUD/ScorePanel" unique_id=1719913088]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -51,3 +52,18 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_jyhfs")
 theme_override_font_sizes/font_size = 32
 text = "score: 0"
+
+[node name="Fade" type="ColorRect" parent="HUD" unique_id=215132209]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_right = 17.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+color = Color(0, 0, 0, 0)
+
+[node name="musicTheme" type="AudioStreamPlayer2D" parent="." unique_id=1414382650]
+stream = ExtResource("4_jyhfs")

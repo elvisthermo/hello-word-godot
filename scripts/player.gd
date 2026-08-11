@@ -6,11 +6,12 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -850.0
 var alive = true
-
+var can_move = true
 
 
 func _physics_process(delta: float) -> void:
-	
+	if !can_move:
+		return
 	if !alive:
 		return
 	

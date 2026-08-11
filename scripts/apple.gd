@@ -26,7 +26,6 @@ func _on_body_entered(body: Node2D) -> void:
 	animated_sprite_2d.animation = "colected"
 	colect_sound.play()
 	colected.emit()
-	collision_shape_2d.disabled = true
 	call_deferred("_on_disabled_collision")
 
 func _on_disabled_collision() -> void:
