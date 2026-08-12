@@ -203,8 +203,7 @@ https://github.com/elvisthermo
 
 ## 📄 Licença
 
-Este projeto ainda não possui uma licença de código aberto definida.
-
+Licenciado sob a GNU General Public License (GPL).
 ---
 
 ⭐ Se este projeto for útil para seus estudos, considere acompanhar sua evolução no GitHub.
